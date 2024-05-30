@@ -26,9 +26,6 @@ jobs:
       - name: Set environment variables
         run: echo "CGO_ENABLED=0" >> $GITHUB_ENV
 
-      - name: Set datadog api key
-        run: echo "DD_API_KEY=${{ secrets.DD_API_KEY }}" >> $GITHUB_ENV
-
       - name: Initialize Go module
         run: go mod tidy
 
@@ -59,9 +56,6 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ secrets.DOCKER_USER }}/user-service
-
-      - name: Set up environment variables
-        run: echo "DD_API_KEY=${{ secrets.DD_API_KEY }}" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
