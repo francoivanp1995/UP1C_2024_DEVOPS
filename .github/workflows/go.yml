@@ -26,6 +26,9 @@ jobs:
       - name: Set environment variables
         run: echo "CGO_ENABLED=0" >> $GITHUB_ENV
 
+      - name: Set datadog api key
+        run: echo "DD_API_KEY=${{ secrets.DD_API_KEY }}" >> $GITHUB_ENV
+
       - name: Initialize Go module
         run: go mod tidy
 
