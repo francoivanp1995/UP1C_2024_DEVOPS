@@ -7,7 +7,7 @@ RUN go build -o app . && ls -lh app
 RUN DD_AGENT_MAJOR_VERSION=7 \
     DD_API_KEY=${DD_API_KEY} \
     DD_AGENT_VERSION=latest \
-    bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+    bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 EXPOSE 8000
 CMD ["./app"]
 
@@ -21,7 +21,7 @@ RUN go build -o app . && ls -lh app
 RUN DD_AGENT_MAJOR_VERSION=7 \
     DD_API_KEY=${DD_API_KEY} \
     DD_AGENT_VERSION=latest \
-    bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+    bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 EXPOSE 8000
 CMD ["./app"]
 
