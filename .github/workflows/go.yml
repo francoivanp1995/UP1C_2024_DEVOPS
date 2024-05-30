@@ -55,7 +55,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ secrets.DOCKER_USER }}/user-service
+          images: ${{ secrets.DOCKER_USER }}/up-devops-2024
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -63,5 +63,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USER }}/user-service:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_USER }}/up-devops-2024:${{ github.sha }}
           labels: ${{ steps.meta.outputs.labels }}
