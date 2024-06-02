@@ -3,7 +3,20 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
       target: dev
     ports:
       - "8000:8000"
+  redis:
+    image: redis
+  datadog:
+    build: datadog
+    pid: host
+    environment:
+     - DD_API_KEY=${DD_API_KEY}
+     - DD_SITE=${DD_SITE}
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /proc/:/host/proc/:ro
+     - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
+     - ./datadog/datadog.yaml:/etc/datadog-agent/datadog.yaml
