@@ -12,6 +12,7 @@ services:
   datadog:
     build: datadog
     pid: host
+    restart: always
     environment:
      - DD_API_KEY=${DD_API_KEY}
      - DD_SITE=${DD_SITE}
