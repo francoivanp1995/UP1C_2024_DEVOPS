@@ -10,7 +10,7 @@ services:
   redis:
     image: redis
   datadog:
-    build: datadog
+    build: ./datadog
     pid: host
     environment:
      - DD_API_KEY=${DD_API_KEY}
