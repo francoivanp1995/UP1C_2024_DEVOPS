@@ -11,6 +11,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", Handler)
-	fmt.Println("La aplicación está escuchando en http://localhost:8000")
+	fmt.Println("La aplicación está escuchando en http://localhost:7000")
 	http.ListenAndServe(":8000", nil)
 }
