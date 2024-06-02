@@ -20,4 +20,4 @@ services:
      - /var/run/docker.sock:/var/run/docker.sock
      - /proc/:/host/proc/:ro
      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
-     - ./datadog:/etc/datadog-agent
+     - ./datadog/datadog.yaml:/etc/datadog-agent/datadog.yaml
