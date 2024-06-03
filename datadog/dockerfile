@@ -1,2 +1,0 @@
-FROM datadog/agent:latest
-CMD ["agent", "run"]
